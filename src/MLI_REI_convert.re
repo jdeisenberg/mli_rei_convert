@@ -59,7 +59,7 @@ let string_of_state = (state: scanState) : string => {
  * Utility functions for conversion of ML to RE
  */
 let toReason = (s: string, implOrInterface: conversionType) : string => {
-  Js.String.replaceByRe([%re "/\\@/g"], "@", s) |> switch (implOrInterface) {
+  Js.String.replaceByRe([%re "/\\\\@/g"], "@", s) |> switch (implOrInterface) {
         | Implementation => Refmt.parseML
         | Interface => Refmt.parseMLI
       }
