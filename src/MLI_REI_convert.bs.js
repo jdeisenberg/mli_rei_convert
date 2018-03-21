@@ -37,7 +37,7 @@ function string_of_state(state) {
 }
 
 function toReason(s, implOrInterface) {
-  var param = Curry._1(implOrInterface !== 0 ? Refmt.parseMLI : Refmt.parseML, s);
+  var param = Curry._1(implOrInterface !== 0 ? Refmt.parseMLI : Refmt.parseML, s.replace((/\@/g), "@"));
   if (param.tag) {
     return "Error: " + param[0][1][/* message */0];
   } else {
