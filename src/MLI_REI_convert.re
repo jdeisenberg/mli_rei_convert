@@ -1,3 +1,8 @@
+/*
+ * These are the possible states that the parser can be in
+ * SimplePre is preformatted text in [ ]
+ * MultiLine is preformatted text in {[  [}
+ */
 type scanState =
   | Scan
   | OpenParen
@@ -11,6 +16,10 @@ type scanState =
   | PossibleEndMultiLine
   | PossibleEndComment;
   
+/*
+ * This is a record used to keep track of the progress of parsing
+ * the document comments
+ */
 type statusType = {
   state: scanState,
   prevState: scanState,
@@ -20,10 +29,16 @@ type statusType = {
   finalString: string
 };
 
+/*
+ * Should we use parseML/printRE or parseMLI/printREI?
+ */
 type conversionType =
   | Implementation
   | Interface;
 
+/*
+ * Convert a scanState to a string; used for debugging
+ */
 let string_of_state = (state: scanState) : string => {
   switch (state) {
   | Scan => "Scan"
