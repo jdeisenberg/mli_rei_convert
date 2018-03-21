@@ -1,0 +1,22 @@
+{
+  "name": "doc_convert",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^2.2.2"
+  },
+  "dependencies": {
+    "bs-refmt": "github:glennsl/bs-refmt",
+    "reason": "^3.1.0",
+    "refmt": "^1.13.7-1"
+  }
+}
