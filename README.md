@@ -10,6 +10,10 @@ The algorithm, in general, is that anything in `[...]` is a single line of Buckl
 
 The `mli_files` folder in this repository contains the `.mli` files for Belt, which you may use as input to the program.
 
+# Dependencies
+
+Uses [`glennsl/bs-refmt`](https://github.com/glennsl/bs-refmt)
+
 # Build
 ```
 bsb -make-world
